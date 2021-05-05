@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {LocationsComponent} from '../locations/locations.component';
 import {CoreComponent} from './core.component';
 
 
@@ -11,12 +10,13 @@ const routes: Routes = [
     component: CoreComponent,
     children: [
       {
-        path: 'my-locations',
-        component: LocationsComponent
+        path: 'locations',
+        loadChildren: () => import('../locations/locations.module').then(mod => mod.LocationsModule)
       }
     ]
   },
 ];
+
 
 @NgModule({
   declarations: [],
