@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LocationsComponent } from './locations.component';
+import { CategoriesComponent } from './categories.component';
 import {RouterModule, Routes} from '@angular/router';
+import { CategoriesListComponent } from './categories-list/categories-list.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-list'},
   {
     path: 'my-list',
-    component: LocationsComponent
+    component: CategoriesComponent
   },
 ];
 @NgModule({
   declarations: [
-    LocationsComponent
+    CategoriesComponent,
+    CategoriesListComponent
   ],
   imports: [
     CommonModule,
@@ -20,4 +22,4 @@ const routes: Routes = [
 
   ]
 })
-export class LocationsModule { }
+export class CategoryModule { }

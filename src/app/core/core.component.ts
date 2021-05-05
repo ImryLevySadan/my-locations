@@ -14,7 +14,7 @@ export class CoreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['locations'], {relativeTo: this.activatedRoute}).catch();
+    this.router.navigate(['categories'], {relativeTo: this.activatedRoute}).catch();
   }
 
 }
