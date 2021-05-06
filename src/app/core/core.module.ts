@@ -5,13 +5,15 @@ import {CoreRoutingModule} from './core-routing.module';
 import {HeaderComponent} from './components/header/header.component';
 import {SharedModulesModule} from '../shared/modules/shared-modules.module';
 import { HeaderActionsComponent } from './components/header-actions/header-actions.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
     CoreComponent,
     HeaderComponent,
-    HeaderActionsComponent
+    HeaderActionsComponent,
+    HomePageComponent
   ],
   imports: [
     CommonModule,

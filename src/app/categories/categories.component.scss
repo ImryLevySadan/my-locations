@@ -1,7 +1,8 @@
 @import "../../assets/globals/vars";
+@import "../../assets/globals/sizes";
 
 .categories {
-  height: calc(100vh - 64px);
+  height: $full-screen-below-header;
   width: 100%;
   background: $global-orange;
 }

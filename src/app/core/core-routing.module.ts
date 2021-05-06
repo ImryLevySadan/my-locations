@@ -2,9 +2,17 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {CoreComponent} from './core.component';
+import {HomePageComponent} from './components/home-page/home-page.component';
 
 
 const routes: Routes = [
+  {
+    // Default page that redirects to the default routing
+    // set by the server side.
+    path: '',
+    pathMatch: 'full',
+    component: HomePageComponent,
+  },
   {
     path: '',
     component: CoreComponent,
