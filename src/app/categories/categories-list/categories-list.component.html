@@ -3,3 +3,6 @@
   <div class="row" *ngFor="let category of categories">{{category?.name}}</div>
   <div class="row no-data" *ngIf="!categories || categories?.length === 0">No Categories Found</div>
 </div>
+<div *teleportTo="'.actions-sections'">
+
+</div>

@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CategoriesComponent } from './categories.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {CategoriesComponent} from './categories.component';
 import {RouterModule, Routes} from '@angular/router';
-import { CategoriesListComponent } from './categories-list/categories-list.component';
+import {CategoriesListComponent} from './categories-list/categories-list.component';
+import {SharedDirectivesModule} from '../shared/modules/shared-directives.module';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-list'},
@@ -11,6 +12,7 @@ const routes: Routes = [
     component: CategoriesComponent
   },
 ];
+
 @NgModule({
   declarations: [
     CategoriesComponent,
@@ -18,8 +20,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    SharedDirectivesModule,
     RouterModule.forChild(routes),
 
   ]
 })
-export class CategoryModule { }
+export class CategoryModule {
+}
