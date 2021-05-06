@@ -1,5 +1,5 @@
-import { Directive, Input, EmbeddedViewRef, TemplateRef, Inject, SimpleChanges } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import {Directive, Input, EmbeddedViewRef, TemplateRef, Inject, SimpleChanges} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
 
 @Directive({
   selector: '[teleportTo]',
@@ -13,7 +13,8 @@ export class TeleportDirective {
   constructor(
     private tpl: TemplateRef<any>,
     @Inject(DOCUMENT) private document: Document
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.viewRef = this.tpl.createEmbeddedView({});

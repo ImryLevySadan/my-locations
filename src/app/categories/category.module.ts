@@ -4,6 +4,7 @@ import {CategoriesComponent} from './categories.component';
 import {RouterModule, Routes} from '@angular/router';
 import {CategoriesListComponent} from './categories-list/categories-list.component';
 import {SharedDirectivesModule} from '../shared/modules/shared-directives.module';
+import {SharedComponentsModule} from '../shared/modules/shared-components.module';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-list'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedDirectivesModule,
+    SharedComponentsModule,
     RouterModule.forChild(routes),
 
   ]
