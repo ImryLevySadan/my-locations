@@ -4,5 +4,5 @@
   <div class="row no-data" *ngIf="!categories || categories?.length === 0">No Categories Found</div>
 </div>
 <div *teleportTo="'.actions-sections'">
-  <app-header-actions></app-header-actions>
+  <app-header-actions [categories]="categories"></app-header-actions>
 </div>
