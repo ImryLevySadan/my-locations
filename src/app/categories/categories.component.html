@@ -1,7 +1,7 @@
-<div class="categories">
-  <router-outlet></router-outlet>
+<div *teleportTo="'.actions-sections'">
+  <app-header-actions (actionSelected)="onActionSelected($event)"></app-header-actions>
 </div>
 
-<div *teleportTo="'.actions-sections'">
-  <app-header-actions [contextManager]="contextManager" (actionSelected)="onActionSelected($event)"></app-header-actions>
+<div class="categories">
+  <router-outlet></router-outlet>
 </div>

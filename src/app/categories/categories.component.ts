@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CrudActions} from '../shared/models/action.model';
 import {CategoryModel} from '../shared/models/category.model';
 import {CategoriesNav} from './models/categories-navigation.model';
+import {ContextManagerService} from '../shared/services/context-manager.service';
 
 @Component({
   selector: 'app-categories',
@@ -11,19 +12,21 @@ import {CategoriesNav} from './models/categories-navigation.model';
 })
 export class CategoriesComponent implements OnInit {
   categories: CategoryModel[];
-  contextManager: CategoriesNav;
+
   constructor(private router: Router,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private contextManager: ContextManagerService) {
   }
 
   ngOnInit(): void {
-    this.contextManager = CategoriesNav.Categories_List;
+    this.contextManager.storeContext(CategoriesNav.Categories_List);
     this.router.navigate(['list'], {relativeTo: this.activatedRoute}).catch();
   }
+
   onActionSelected($event: CrudActions) {
     switch ($event) {
       case CrudActions.Add: {
-        this.contextManager = CategoriesNav.Categories_Add;
+        this.contextManager.storeContext(CategoriesNav.Categories_Add);
         this.router.navigate(['add'], {relativeTo: this.activatedRoute}).catch();
         break;
       }

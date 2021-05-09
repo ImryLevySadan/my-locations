@@ -7,6 +7,7 @@ import {SharedDirectivesModule} from '../shared/modules/shared-directives.module
 import {SharedComponentsModule} from '../shared/modules/shared-components.module';
 import {AddCategoryComponent} from './add-category/add-category.component';
 import {SharedModulesModule} from '../shared/modules/shared-modules.module';
+import {CategoriesNav} from './models/categories-navigation.model';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-categories'},
@@ -16,11 +17,17 @@ const routes: Routes = [
     children: [
       {
         path: 'list',
-        component: CategoriesListComponent
+        component: CategoriesListComponent,
+        data: {
+          context: CategoriesNav.Categories_List
+        }
       },
       {
         path: 'add',
-        component: AddCategoryComponent
+        component: AddCategoryComponent,
+        data: {
+          context: CategoriesNav.Categories_Add
+        }
       }
     ]
   },
