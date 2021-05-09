@@ -8,6 +8,7 @@ import {SharedComponentsModule} from '../shared/modules/shared-components.module
 import {AddCategoryComponent} from './add-category/add-category.component';
 import {SharedModulesModule} from '../shared/modules/shared-modules.module';
 import {CategoriesNav} from './models/categories-navigation.model';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-categories'},
@@ -26,7 +27,7 @@ const routes: Routes = [
         path: 'add',
         component: AddCategoryComponent,
         data: {
-          context: CategoriesNav.Categories_Add
+          context: CategoriesNav.Category_Add
         }
       }
     ]

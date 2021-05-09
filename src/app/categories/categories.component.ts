@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CrudActions} from '../shared/models/action.model';
 import {CategoryModel} from '../shared/models/category.model';
 import {CategoriesNav} from './models/categories-navigation.model';
 import {ContextManagerService} from '../shared/services/context-manager.service';
@@ -26,7 +25,7 @@ export class CategoriesComponent implements OnInit {
   onActionSelected($event: CategoriesNav) {
     this.contextManager.storeContext($event);
     switch ($event) {
-      case CategoriesNav.Categories_Add: {
+      case CategoriesNav.Category_Add: {
         this.router.navigate(['add'], {relativeTo: this.activatedRoute}).catch();
         break;
       }

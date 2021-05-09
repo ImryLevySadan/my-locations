@@ -1,5 +1,4 @@
 import {ChangeDetectorRef, Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {CrudActions} from '../../models/action.model';
 import {CategoriesNav} from '../../../categories/models/categories-navigation.model';
 import {ContextManagerService} from '../../services/context-manager.service';
 

@@ -1,6 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {CategoriesNav} from '../models/categories-navigation.model';
+import {CategoriesService} from '../../shared/services/rest-api/categories.service';
 
 @Component({
   selector: 'app-add-category',
@@ -10,9 +10,14 @@ import {CategoriesNav} from '../models/categories-navigation.model';
 export class AddCategoryComponent implements OnInit {
   categoryName = new FormControl('');
 
-  constructor() {
+  constructor(private categoriesService: CategoriesService) {
   }
 
   ngOnInit(): void {
+  }
+
+  saveCategory() {
+    this.categoriesService.addCategory(this.categoryName.value);
+    this.categoryName.setValue('');
   }
 }

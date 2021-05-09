@@ -1,11 +1,11 @@
 <div class="category-form content-top-center">
-  <h1>Add New Category</h1>
+  <div class="row title">Add New Category</div>
   <mat-form-field appearance="outline">
     <mat-label>Enter Category Name</mat-label>
-    <input matInput placeholder="Cool Places">
+    <input matInput placeholder="Cool Places" [formControl]="categoryName">
   </mat-form-field>
 
   <div class="buttons">
-      <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary" (click)="saveCategory()">Save</button>
   </div>
 </div>

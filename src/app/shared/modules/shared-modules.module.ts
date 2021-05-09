@@ -8,6 +8,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
 
 const modules = [
   MatIconModule,
@@ -18,6 +20,8 @@ const modules = [
   MatTabsModule,
   MatFormFieldModule,
   MatInputModule,
+  MatListModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({

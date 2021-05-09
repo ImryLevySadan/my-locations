@@ -1,5 +1,16 @@
 <div class="categories-list content-top-center">
   <div class="row title">Categories List</div>
-  <div class="row" *ngFor="let category of categories">{{category?.name}}</div>
+  <div class="row">
+    <mat-list>
+      <mat-list-item *ngFor="let category of categories" (click)="onCategorySelected(category)"
+                     [ngClass]="selectedCategory?.name === category?.name? 'selected' : ''">
+        <mat-icon mat-list-icon svgIcon="location"></mat-icon>
+        <div mat-line>{{category.name}}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <!--  <div class="row" *ngFor="let category of categories">-->
+  <!--    <span class="item">{{category?.name}}</span>-->
+  <!--  </div>-->
   <div class="row no-data" *ngIf="!categories || categories?.length === 0">No Categories Found</div>
 </div>

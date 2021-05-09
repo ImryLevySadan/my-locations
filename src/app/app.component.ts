@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {IconsRegisterService} from './shared/services/icons-register.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-locations';
+
+  constructor(private iconsRegisterService: IconsRegisterService) {
+    this.iconsRegisterService.init();
+  }
 }
