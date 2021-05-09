@@ -8,13 +8,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CoreComponent implements OnInit {
 
-  constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    // this.router.navigate(['categories'], {relativeTo: this.activatedRoute}).catch();
   }
 
 }

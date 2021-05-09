@@ -5,4 +5,8 @@
   height: $full-screen-below-header;
   width: 100%;
   background: $global-orange;
+
+  & .mat-tab-link {
+    opacity: 1;
+  }
 }

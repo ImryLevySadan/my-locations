@@ -1,4 +1,4 @@
-export class Category {
+export class CategoryModel {
   name: string;
 
   constructor(name: string) {

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Category} from '../../shared/models/category';
+import {Component, OnInit} from '@angular/core';
+import {CategoryModel} from '../../shared/models/category.model';
 
 @Component({
   selector: 'app-categories-list',
@@ -7,10 +7,11 @@ import {Category} from '../../shared/models/category';
   styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-  categories: Category[];
-  constructor() { }
+categories: CategoryModel[];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }

@@ -1,4 +1,4 @@
-export class Location {
+export class LocationModel {
   name: string;
   address: string;
   coordinates: Coordinate;

@@ -5,13 +5,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const modules = [
   MatIconModule,
   MatToolbarModule,
   MatButtonModule,
   MatButtonToggleModule,
-  MatBottomSheetModule
+  MatBottomSheetModule,
+  MatTabsModule
 ];
 
 @NgModule({

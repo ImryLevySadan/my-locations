@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
-import {Category} from '../../models/category';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CrudActions} from '../../models/action.model';
+import {CategoriesNav} from '../../../categories/models/categories-navigation.model';
 
 @Component({
   selector: 'app-header-actions',
@@ -8,7 +9,10 @@ import {Category} from '../../models/category';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderActionsComponent implements OnInit {
-  @Input() categories: Category[];
+  @Input() contextManager: CategoriesNav;
+  CategoriesNav = CategoriesNav;
+  @Output() actionSelected: EventEmitter<CrudActions> = new EventEmitter<CrudActions>();
+  CrudActions = CrudActions;
 
   constructor() {
   }
@@ -16,8 +20,7 @@ export class HeaderActionsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get isNoCategories(){
-    return !this.categories || this.categories && this.categories.length === 0;
+  onCategoryClicked($event: CrudActions) {
+    this.actionSelected.emit($event);
   }
-
 }

@@ -5,24 +5,38 @@ import {RouterModule, Routes} from '@angular/router';
 import {CategoriesListComponent} from './categories-list/categories-list.component';
 import {SharedDirectivesModule} from '../shared/modules/shared-directives.module';
 import {SharedComponentsModule} from '../shared/modules/shared-components.module';
+import {AddCategoryComponent} from './add-category/add-category.component';
+import {SharedModulesModule} from '../shared/modules/shared-modules.module';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'my-list'},
+  {path: '', pathMatch: 'full', redirectTo: 'my-categories'},
   {
-    path: 'my-list',
-    component: CategoriesComponent
+    path: 'my-categories',
+    component: CategoriesComponent,
+    children: [
+      {
+        path: 'list',
+        component: CategoriesListComponent
+      },
+      {
+        path: 'add',
+        component: AddCategoryComponent
+      }
+    ]
   },
 ];
 
 @NgModule({
   declarations: [
     CategoriesComponent,
-    CategoriesListComponent
+    CategoriesListComponent,
+    AddCategoryComponent
   ],
   imports: [
     CommonModule,
     SharedDirectivesModule,
     SharedComponentsModule,
+    SharedModulesModule,
     RouterModule.forChild(routes),
 
   ]
