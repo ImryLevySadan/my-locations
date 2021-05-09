@@ -7,8 +7,7 @@ import {SharedDirectivesModule} from '../shared/modules/shared-directives.module
 import {SharedComponentsModule} from '../shared/modules/shared-components.module';
 import {AddCategoryComponent} from './add-category/add-category.component';
 import {SharedModulesModule} from '../shared/modules/shared-modules.module';
-import {CategoriesNav} from './models/categories-navigation.model';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ViewCategoryComponent } from './view-category/view-category.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-categories'},
@@ -18,17 +17,15 @@ const routes: Routes = [
     children: [
       {
         path: 'list',
-        component: CategoriesListComponent,
-        data: {
-          context: CategoriesNav.Categories_List
-        }
+        component: CategoriesListComponent
       },
       {
         path: 'add',
-        component: AddCategoryComponent,
-        data: {
-          context: CategoriesNav.Category_Add
-        }
+        component: AddCategoryComponent
+      },
+      {
+        path: ':id',
+        component: ViewCategoryComponent
       }
     ]
   },
@@ -38,7 +35,8 @@ const routes: Routes = [
   declarations: [
     CategoriesComponent,
     CategoriesListComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    ViewCategoryComponent
   ],
   imports: [
     CommonModule,

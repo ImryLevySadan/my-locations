@@ -5,21 +5,22 @@
 </button>
 <button *ngIf="contextManager === CategoriesNav.Category_Selected"
         mat-icon-button class=""
-        aria-label="Delete CategoryModel Icon">
+        aria-label="Delete CategoryModel Icon" (click)="onActionClicked(CategoriesNav.Category_Delete)">
   <mat-icon>delete</mat-icon>
 </button>
 <button *ngIf="contextManager === CategoriesNav.Category_Selected"
         mat-icon-button class=""
-        aria-label="View CategoryModel Icon Details">
+        aria-label="View CategoryModel Icon Details" (click)="onCategoryClicked(CategoriesNav.Category_View)">
   <mat-icon>visibility</mat-icon>
 </button>
 
-<button *ngIf="contextManager !== CategoriesNav.Categories_List && contextManager !== CategoriesNav.Category_Selected"
-        mat-raised-button
-        (click)="onCategoryClicked(CategoriesNav.Categories_List)">Back To List
+<button
+  *ngIf="contextManager !== CategoriesNav.Categories_List && contextManager !== CategoriesNav.Category_Selected && contextManager !== CategoriesNav.Category_Delete"
+  mat-raised-button
+  (click)="onCategoryClicked(CategoriesNav.Categories_List)">Back To List
 </button>
 
-<button *ngIf="contextManager === CategoriesNav.Categories_List"
+<button *ngIf="contextManager === CategoriesNav.Categories_List || contextManager === CategoriesNav.Category_Delete"
         mat-icon-button class="example-icon"
         aria-label="Add Delete CategoryModel Icon" (click)="onCategoryClicked(CategoriesNav.Category_Add)">
   <mat-icon>add</mat-icon>

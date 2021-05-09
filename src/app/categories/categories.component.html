@@ -1,5 +1,5 @@
 <div *teleportTo="'.actions-sections'">
-  <app-header-actions (contextChanges)="onActionSelected($event)"></app-header-actions>
+  <app-header-actions (contextChanges)="onContextChanged($event)" (actionSelected)="onActionSelected($event)"></app-header-actions>
 </div>
 
 <div class="categories">

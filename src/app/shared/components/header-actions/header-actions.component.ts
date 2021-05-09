@@ -12,6 +12,7 @@ export class HeaderActionsComponent implements OnInit {
   private _contextManager: CategoriesNav;
   CategoriesNav = CategoriesNav;
   @Output() contextChanges: EventEmitter<CategoriesNav> = new EventEmitter<CategoriesNav>();
+  @Output() actionSelected: EventEmitter<CategoriesNav> = new EventEmitter<CategoriesNav>();
 
   constructor(private managerService: ContextManagerService, private cdr: ChangeDetectorRef) {
   }
@@ -29,5 +30,9 @@ export class HeaderActionsComponent implements OnInit {
 
   get contextManager() {
     return this._contextManager;
+  }
+
+  onActionClicked(action: CategoriesNav) {
+    this.actionSelected.emit(action);
   }
 }

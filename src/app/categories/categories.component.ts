@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryModel} from '../shared/models/category.model';
 import {CategoriesNav} from './models/categories-navigation.model';
 import {ContextManagerService} from '../shared/services/context-manager.service';
+import {CategoriesService} from '../shared/services/rest-api/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -11,18 +12,21 @@ import {ContextManagerService} from '../shared/services/context-manager.service'
 })
 export class CategoriesComponent implements OnInit {
   categories: CategoryModel[];
+  selectedCategory: CategoryModel;
 
   constructor(private router: Router,
               private activatedRoute: ActivatedRoute,
-              private contextManager: ContextManagerService) {
+              private contextManager: ContextManagerService,
+              private categoriesService: CategoriesService) {
   }
 
   ngOnInit(): void {
     this.contextManager.storeContext(CategoriesNav.Categories_List);
+    this.subscribeToSelectedCategory();
     this.router.navigate(['list'], {relativeTo: this.activatedRoute}).catch();
   }
 
-  onActionSelected($event: CategoriesNav) {
+  onContextChanged($event: CategoriesNav) {
     this.contextManager.storeContext($event);
     switch ($event) {
       case CategoriesNav.Category_Add: {
@@ -33,8 +37,31 @@ export class CategoriesComponent implements OnInit {
         this.router.navigate(['list'], {relativeTo: this.activatedRoute}).catch();
         break;
       }
+      case CategoriesNav.Category_View: {
+        this.router.navigate([this.selectedCategory.name], {relativeTo: this.activatedRoute}).catch();
+        break;
+      }
       default:
         break;
     }
+  }
+
+  onActionSelected($event: CategoriesNav) {
+    switch ($event) {
+      case CategoriesNav.Category_Delete: {
+        this.contextManager.storeContext($event);
+        this.categoriesService.deleteCategory(this.selectedCategory);
+        this.contextManager.emptyCategory();
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  private subscribeToSelectedCategory() {
+    this.contextManager.notifySelectedCategoryAsObservable$.subscribe(category => {
+      this.selectedCategory = category;
+    });
   }
 }
