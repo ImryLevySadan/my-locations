@@ -7,7 +7,7 @@ import {CategoryModel} from '../../shared/models/category.model';
   styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-categories: CategoryModel[];
+  categories: CategoryModel[];
 
   constructor() {
   }

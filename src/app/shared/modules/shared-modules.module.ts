@@ -6,6 +6,8 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const modules = [
   MatIconModule,
@@ -13,7 +15,9 @@ const modules = [
   MatButtonModule,
   MatButtonToggleModule,
   MatBottomSheetModule,
-  MatTabsModule
+  MatTabsModule,
+  MatFormFieldModule,
+  MatInputModule,
 ];
 
 @NgModule({

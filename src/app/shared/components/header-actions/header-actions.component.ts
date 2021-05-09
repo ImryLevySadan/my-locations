@@ -12,8 +12,7 @@ import {ContextManagerService} from '../../services/context-manager.service';
 export class HeaderActionsComponent implements OnInit {
   private _contextManager: CategoriesNav;
   CategoriesNav = CategoriesNav;
-  @Output() actionSelected: EventEmitter<CrudActions> = new EventEmitter<CrudActions>();
-  CrudActions = CrudActions;
+  @Output() contextChanges: EventEmitter<CategoriesNav> = new EventEmitter<CategoriesNav>();
 
   constructor(private managerService: ContextManagerService, private cdr: ChangeDetectorRef) {
   }
@@ -25,12 +24,11 @@ export class HeaderActionsComponent implements OnInit {
     });
   }
 
-  onCategoryClicked($event: CrudActions) {
-    this.actionSelected.emit($event);
+  onCategoryClicked($event: CategoriesNav) {
+    this.contextChanges.emit($event);
   }
 
   get contextManager() {
-    console.log('getter _contextManager', this._contextManager);
     return this._contextManager;
   }
 }

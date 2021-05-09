@@ -23,11 +23,15 @@ export class CategoriesComponent implements OnInit {
     this.router.navigate(['list'], {relativeTo: this.activatedRoute}).catch();
   }
 
-  onActionSelected($event: CrudActions) {
+  onActionSelected($event: CategoriesNav) {
+    this.contextManager.storeContext($event);
     switch ($event) {
-      case CrudActions.Add: {
-        this.contextManager.storeContext(CategoriesNav.Categories_Add);
+      case CategoriesNav.Categories_Add: {
         this.router.navigate(['add'], {relativeTo: this.activatedRoute}).catch();
+        break;
+      }
+      case CategoriesNav.Categories_List: {
+        this.router.navigate(['list'], {relativeTo: this.activatedRoute}).catch();
         break;
       }
       default:

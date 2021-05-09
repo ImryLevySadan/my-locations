@@ -1,17 +1,25 @@
-<button *ngIf="contextManager !== CategoriesNav.Categories_List" mat-icon-button class=""
+<button *ngIf="contextManager !== CategoriesNav.Categories_List && contextManager !== CategoriesNav.Categories_Add"
+        mat-icon-button class=""
         aria-label="Edit CategoryModel Icon">
   <mat-icon>edit</mat-icon>
 </button>
-<button *ngIf="contextManager !== CategoriesNav.Categories_List" mat-icon-button class=""
+<button *ngIf="contextManager !== CategoriesNav.Categories_List && contextManager !== CategoriesNav.Categories_Add"
+        mat-icon-button class=""
         aria-label="Delete CategoryModel Icon">
   <mat-icon>delete</mat-icon>
 </button>
-<button *ngIf="contextManager !== CategoriesNav.Categories_List" mat-icon-button class=""
+<button *ngIf="contextManager !== CategoriesNav.Categories_List && contextManager !== CategoriesNav.Categories_Add"
+        mat-icon-button class=""
         aria-label="View CategoryModel Icon Details">
   <mat-icon>visibility</mat-icon>
 </button>
+
+<button *ngIf="contextManager !== CategoriesNav.Categories_List" mat-raised-button
+        (click)="onCategoryClicked(CategoriesNav.Categories_List)">Back To List
+</button>
+
 <button *ngIf="contextManager === CategoriesNav.Categories_List"
         mat-icon-button class="example-icon"
-        aria-label="Add Delete CategoryModel Icon" (click)="onCategoryClicked(CrudActions.Add)">
+        aria-label="Add Delete CategoryModel Icon" (click)="onCategoryClicked(CategoriesNav.Categories_Add)">
   <mat-icon>add</mat-icon>
 </button>

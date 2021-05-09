@@ -1,5 +1,13 @@
 $full-screen-below-header: calc(100vh - 64px);
-.full-size{
+.full-size {
   height: 100%;
   width: 100%;
+}
+
+.content-top-center {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

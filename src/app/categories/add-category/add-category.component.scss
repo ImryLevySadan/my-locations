@@ -1,0 +1,15 @@
+.category-form {
+
+  & h1 {
+    font-family: Andale monospace;
+    margin: 1rem;
+  }
+
+  & .buttons {
+    margin-left: 3rem;
+  }
+
+  & button:first-of-type {
+    margin-right: 1rem;
+  }
+}
