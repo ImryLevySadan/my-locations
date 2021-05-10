@@ -18,7 +18,7 @@ export class IconsRegisterService {
     ];
     icons.map(icon => this.matIconRegistry.addSvgIcon(
       icon,
-      this.domSanitizer.bypassSecurityTrustResourceUrl(`/assets/photos/${icon}.svg`)
+      this.domSanitizer.bypassSecurityTrustResourceUrl(`assets/photos/${icon}.svg`)
     ));
   }
 }
