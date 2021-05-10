@@ -10,7 +10,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const modules = [
   MatIconModule,
@@ -22,8 +21,7 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatListModule,
-  ReactiveFormsModule,
-  BrowserAnimationsModule
+  ReactiveFormsModule
 ];
 
 @NgModule({

@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditCategoryComponent } from './edit-category.component';
 import {SharedModules} from '../../shared/modules/shared-modules.module';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('EditCategoryComponent', () => {
   let component: EditCategoryComponent;
@@ -10,7 +11,7 @@ describe('EditCategoryComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ EditCategoryComponent ],
-      imports: [SharedModules]
+      imports: [SharedModules, NoopAnimationsModule]
     })
     .compileComponents();
   });
