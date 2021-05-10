@@ -36,4 +36,16 @@ export class CategoriesService {
       }
     }
   }
+
+  updateCategory(category: string, source: CategoryModel) {
+    let categories = JSON.parse(localStorage.getItem(LocalStorageItems.Categories));
+    if (categories) {
+      this.deleteCategory(source);
+      categories = JSON.parse(localStorage.getItem(LocalStorageItems.Categories));
+      categories.push(category);
+    } else {
+      categories = [category];
+    }
+    localStorage.setItem(LocalStorageItems.Categories, JSON.stringify(categories));
+  }
 }

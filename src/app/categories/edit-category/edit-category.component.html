@@ -1,0 +1,11 @@
+<div class="category-form content-top-center">
+  <div class="row title">Edit Category</div>
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Category Name</mat-label>
+    <input matInput placeholder="Cool Places" [formControl]="categoryName">
+  </mat-form-field>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" (click)="updateCategory()">Save</button>
+  </div>
+</div>

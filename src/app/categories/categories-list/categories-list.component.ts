@@ -32,8 +32,8 @@ export class CategoriesListComponent implements OnInit {
   private loadCategories() {
     const categories = this.categoriesService.getCategories();
     if (categories && categories.length > 0) {
+      this.categories = [];
       this.categoriesService.getCategories().forEach(category => {
-        this.categories = [];
         this.categories.push(new CategoryModel(category));
       });
     } else {

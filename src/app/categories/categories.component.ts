@@ -41,6 +41,10 @@ export class CategoriesComponent implements OnInit {
         this.router.navigate([this.selectedCategory.name], {relativeTo: this.activatedRoute}).catch();
         break;
       }
+      case CategoriesNav.Category_Edit: {
+        this.router.navigate([this.selectedCategory.name, 'edit'], {relativeTo: this.activatedRoute}).catch();
+        break;
+      }
       default:
         break;
     }

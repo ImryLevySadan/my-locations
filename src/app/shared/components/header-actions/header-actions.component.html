@@ -1,6 +1,6 @@
 <button *ngIf="contextManager === CategoriesNav.Category_Selected"
         mat-icon-button class=""
-        aria-label="Edit CategoryModel Icon">
+        aria-label="Edit CategoryModel Icon" (click)="onCategoryClicked(CategoriesNav.Category_Edit)">
   <mat-icon>edit</mat-icon>
 </button>
 <button *ngIf="contextManager === CategoriesNav.Category_Selected"

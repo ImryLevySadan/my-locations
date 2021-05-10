@@ -4,4 +4,5 @@ export enum CategoriesNav {
   Category_Selected = 'Category Selected',
   Category_View = 'View Category',
   Category_Delete = 'Delete Category',
+  Category_Edit = 'Edit Category',
 }

@@ -7,7 +7,8 @@ import {SharedDirectivesModule} from '../shared/modules/shared-directives.module
 import {SharedComponentsModule} from '../shared/modules/shared-components.module';
 import {AddCategoryComponent} from './add-category/add-category.component';
 import {SharedModulesModule} from '../shared/modules/shared-modules.module';
-import { ViewCategoryComponent } from './view-category/view-category.component';
+import {ViewCategoryComponent} from './view-category/view-category.component';
+import {EditCategoryComponent} from './edit-category/edit-category.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'my-categories'},
@@ -26,7 +27,11 @@ const routes: Routes = [
       {
         path: ':id',
         component: ViewCategoryComponent
-      }
+      }, {
+        path: ':id/edit',
+        component: EditCategoryComponent
+      },
+
     ]
   },
 ];
@@ -36,7 +41,8 @@ const routes: Routes = [
     CategoriesComponent,
     CategoriesListComponent,
     AddCategoryComponent,
-    ViewCategoryComponent
+    ViewCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     CommonModule,
