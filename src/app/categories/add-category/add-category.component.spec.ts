@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddCategoryComponent } from './add-category.component';
+import {SharedModules} from '../../shared/modules/shared-modules.module';
 
 describe('AddCategoryComponent', () => {
   let component: AddCategoryComponent;
@@ -8,7 +9,8 @@ describe('AddCategoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddCategoryComponent ]
+      declarations: [ AddCategoryComponent ],
+      imports: [SharedModules]
     })
     .compileComponents();
   });

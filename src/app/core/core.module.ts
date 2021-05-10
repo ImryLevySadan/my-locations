@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {CoreComponent} from './core.component';
 import {CoreRoutingModule} from './core-routing.module';
 import {HeaderComponent} from './components/header/header.component';
-import {SharedModulesModule} from '../shared/modules/shared-modules.module';
+import {SharedModules} from '../shared/modules/shared-modules.module';
 import { HomePageComponent } from './components/home-page/home-page.component';
 
 
@@ -16,7 +16,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     imports: [
         CommonModule,
         CoreRoutingModule,
-        SharedModulesModule
+        SharedModules
     ]
 })
 export class CoreModule {

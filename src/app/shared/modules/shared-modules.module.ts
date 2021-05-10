@@ -32,5 +32,5 @@ const modules = [
   ],
   exports: [modules]
 })
-export class SharedModulesModule {
+export class SharedModules {
 }

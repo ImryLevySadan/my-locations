@@ -6,7 +6,7 @@ import {CategoriesListComponent} from './categories-list/categories-list.compone
 import {SharedDirectivesModule} from '../shared/modules/shared-directives.module';
 import {SharedComponentsModule} from '../shared/modules/shared-components.module';
 import {AddCategoryComponent} from './add-category/add-category.component';
-import {SharedModulesModule} from '../shared/modules/shared-modules.module';
+import {SharedModules} from '../shared/modules/shared-modules.module';
 import {ViewCategoryComponent} from './view-category/view-category.component';
 import {EditCategoryComponent} from './edit-category/edit-category.component';
 
@@ -48,7 +48,7 @@ const routes: Routes = [
     CommonModule,
     SharedDirectivesModule,
     SharedComponentsModule,
-    SharedModulesModule,
+    SharedModules,
     RouterModule.forChild(routes),
 
   ]

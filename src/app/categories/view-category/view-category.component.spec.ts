@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewCategoryComponent } from './view-category.component';
+import {SharedModules} from '../../shared/modules/shared-modules.module';
 
 describe('ViewCategoryComponent', () => {
   let component: ViewCategoryComponent;
@@ -8,7 +9,8 @@ describe('ViewCategoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewCategoryComponent ]
+      declarations: [ ViewCategoryComponent ],
+      imports: [SharedModules]
     })
     .compileComponents();
   });

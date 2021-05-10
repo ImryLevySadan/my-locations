@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HeaderActionsComponent} from '../components/header-actions/header-actions.component';
-import {SharedModulesModule} from './shared-modules.module';
+import {SharedModules} from './shared-modules.module';
 
 const components = [HeaderActionsComponent];
 
@@ -9,7 +9,7 @@ const components = [HeaderActionsComponent];
   declarations: [components],
   imports: [
     CommonModule,
-    SharedModulesModule
+    SharedModules
   ],
   exports: [components]
 })

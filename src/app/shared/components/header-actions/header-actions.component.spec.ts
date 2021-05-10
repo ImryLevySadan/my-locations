@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HeaderActionsComponent } from './header-actions.component';
+import {HeaderActionsComponent} from './header-actions.component';
+import {SharedModules} from '../../modules/shared-modules.module';
 
 describe('HeaderActionsComponent', () => {
   let component: HeaderActionsComponent;
@@ -8,9 +9,10 @@ describe('HeaderActionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderActionsComponent ]
+      declarations: [HeaderActionsComponent],
+      imports: [SharedModules]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
