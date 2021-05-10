@@ -11,7 +11,7 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./categories-list.component.scss']
 })
 export class CategoriesListComponent implements OnInit {
-  categories: CategoryModel[] = [];
+  private _categories: CategoryModel[] = [];
   selectedCategory: CategoryModel;
   subsc: Subscription[] = [];
 
@@ -32,12 +32,12 @@ export class CategoriesListComponent implements OnInit {
   private loadCategories() {
     const categories = this.categoriesService.getCategories();
     if (categories && categories.length > 0) {
-      this.categories = [];
+      this._categories = [];
       this.categoriesService.getCategories().forEach(category => {
-        this.categories.push(new CategoryModel(category));
+        this._categories.push(new CategoryModel(category));
       });
     } else {
-      this.categories = [];
+      this._categories = [];
     }
   }
 
@@ -48,6 +48,10 @@ export class CategoriesListComponent implements OnInit {
       }
     });
     this.subsc.push(subsc);
+  }
+
+  get categories() {
+    return this._categories ? this._categories.sort() : [];
   }
 
   ngOnDestroy() {
