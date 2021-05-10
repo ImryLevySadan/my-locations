@@ -7,7 +7,6 @@ import {IconsRegisterService} from './shared/services/icons-register.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-locations';
 
   constructor(private iconsRegisterService: IconsRegisterService) {
     this.iconsRegisterService.init();
